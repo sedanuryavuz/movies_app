@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/presentation/pages/login_page.dart';
-import 'package:movies_app/presentation/pages/register_page.dart';
-
+import 'package:movies_app/presentation/pages/home_page.dart';
 import 'core/constants/app_theme.dart';
 
 void main() {
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: RegisterPage(),
+      home: HomePage(),
     );
   }
 }

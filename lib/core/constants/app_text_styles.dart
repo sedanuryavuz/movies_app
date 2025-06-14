@@ -29,4 +29,9 @@ class AppTextStyles {
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w500,
   );
+  static const TextStyle sloganStyle = TextStyle(
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w800,
+    fontSize: 20,
+  );
 }
