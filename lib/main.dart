@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/presentation/pages/favorites_page.dart';
 import 'package:movies_app/presentation/pages/home_page.dart';
 import 'core/constants/app_theme.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: HomePage(),
+      home: FavoritesPage(),
     );
   }
 }
