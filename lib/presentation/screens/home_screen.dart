@@ -16,6 +16,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(text: 'Movie', style: TextStyle(color: Colors.white)),
+              TextSpan(text: 'Lab', style: TextStyle(color: Colors.red)),
+            ],
+          ),
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(child: SearchBarWidget()),
@@ -49,6 +60,15 @@ class _HomeScreenState extends State<HomeScreen> {
           SliverToBoxAdapter(
             child: MovieHorizontalList(movies: demoTopRatedMovies),
           ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favorities'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
         ],
       ),
     );
