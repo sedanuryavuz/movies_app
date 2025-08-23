@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/presentation/screens/movie_details_screen.dart';
 
 import '../widgets/banner_slider.dart';
 import '../widgets/movie_horizontal_list.dart';
@@ -20,8 +21,14 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text.rich(
           TextSpan(
             children: [
-              TextSpan(text: 'Movie', style: TextStyle(color: Colors.white)),
-              TextSpan(text: 'Lab', style: TextStyle(color: Colors.red)),
+              TextSpan(
+                text: 'Movie',
+                style: TextStyle(color: Colors.white),
+              ),
+              TextSpan(
+                text: 'Lab',
+                style: TextStyle(color: Colors.red),
+              ),
             ],
           ),
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -44,7 +51,17 @@ class _HomeScreenState extends State<HomeScreen> {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: SectionHeader(title: "Trending Movies", onTap: () {}),
+              child: SectionHeader(
+                title: "Trending Movies",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (context) => MovieDetailPage(),
+                    ),
+                  );
+                },
+              ),
             ),
           ),
           SliverToBoxAdapter(
@@ -67,7 +84,10 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedItemColor: Colors.grey,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favorities'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorities',
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
         ],
       ),
@@ -78,14 +98,16 @@ class _HomeScreenState extends State<HomeScreen> {
 // TODO : Burası silinecek. Api ile veri gelecek.
 final demoTrendingMovies = [
   {
-    "posterUrl": "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
+    "posterUrl":
+        "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
     "title": "Oppenheimer",
     "year": "2023",
     "actors": "Cillian Murphy",
     "rating": "8.9",
   },
   {
-    "posterUrl": "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
+    "posterUrl":
+        "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
     "title": "Barbie",
     "year": "2023",
     "actors": "Margot Robbie",
@@ -95,14 +117,16 @@ final demoTrendingMovies = [
 
 final demoTopRatedMovies = [
   {
-    "posterUrl": "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
+    "posterUrl":
+        "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
     "title": "Inception",
     "year": "2010",
     "actors": "Leonardo DiCaprio",
     "rating": "8.8",
   },
   {
-    "posterUrl": "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
+    "posterUrl":
+        "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
     "title": "The Dark Knight",
     "year": "2008",
     "actors": "Christian Bale",
